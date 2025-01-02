@@ -13,7 +13,6 @@ I recommend using winget:
 ### Install dependencies
 
 - `raco pkg install json`
-- `raco pkg install json-sourcery-lib`
 
 ## Running the application
 

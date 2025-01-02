@@ -1,16 +1,7 @@
 #lang racket
 (require ffi/unsafe
-         ffi/unsafe/define
-         ffi/unsafe/atomic
-         ffi/unsafe/os-async-channel
-         ffi/unsafe/nsstring
-         ffi/unsafe/alloc
-         ffi/unsafe/custodian
-         ffi/unsafe/schedule
-         ffi/unsafe/os-thread
          racket/match
          racket/runtime-path
-         rebellion/type/enum
          json)
 
 

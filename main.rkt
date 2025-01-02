@@ -184,7 +184,18 @@
   )
 )
 
-(define font-defs-hash (hasheq 'defs (hasheq 'name "roboto-regular" 'size "16")))
+(define font-defs-hash 
+    (hasheq 'defs 
+        (list 
+            (hasheq 'name "roboto-regular" 'size 16)
+            (hasheq 'name "roboto-regular" 'size 18)
+            (hasheq 'name "roboto-regular" 'size 20)
+            (hasheq 'name "roboto-regular" 'size 24)
+            (hasheq 'name "roboto-regular" 'size 28)
+            (hasheq 'name "roboto-regular" 'size 32)
+            (hasheq 'name "roboto-regular" 'size 36)
+            (hasheq 'name "roboto-regular" 'size 48)
+)))
 (define font-defs
     (jsexpr->string	font-defs-hash)
 )
@@ -194,8 +205,40 @@
 )
 
 (define (onInit)
-    (thunk
+    (begin
         (displayln "init")
+
+        (define root-node 
+            (hasheq 
+                `id 0
+                'type "node"
+                'root true
+            )
+        )
+
+        (define unformatted-text 
+            (hasheq 
+                `id 1
+                'type "unformatted-text"
+                'text "Hello, world"
+            )
+        )
+
+        (define children-ids (list 1))
+
+        (define root-node-json
+            (jsexpr->string	root-node)
+        )
+        (define unformatted-text-json
+            (jsexpr->string	unformatted-text)
+        )
+        (define children-ids-json
+            (jsexpr->string	children-ids)
+        )
+
+        (setElement root-node-json)
+        (setElement unformatted-text-json)
+        (setChildren 0 children-ids-json)
     )
 )
 
@@ -238,7 +281,6 @@
 
 (define (infinite-loop)
   (define current (current-thread))
-;   (printf "Current thread: ~a\n" current)
   (displayln "Press CTRL+C to terminate")
   (let loop ()
     (sleep 0.1)

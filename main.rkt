@@ -20,6 +20,11 @@
 
 (define _OnInitCb (_fun #:async-apply (lambda (f) (f)) -> _void))
 (define _OnTextChangedCb (_fun #:async-apply (lambda (f) (f)) _int _string -> _void))
+(define _OnComboChangedCb (_fun #:async-apply (lambda (f) (f)) _int _int -> _void))
+(define _OnNumericValueChangedCb (_fun #:async-apply (lambda (f) (f)) _int _float -> _void))
+(define _OnBooleanValueChangedCb (_fun #:async-apply (lambda (f) (f)) _int _bool -> _void))
+(define _OnMultipleNumericValuesChangedCb (_fun #:async-apply (lambda (f) (f)) _int _pointer _int -> _void))
+(define _OnClickCb (_fun #:async-apply (lambda (f) (f)) _int _bool -> _void))
 
 (define init
   (get-ffi-obj "init" xframes (
@@ -29,11 +34,11 @@
         _string
         _OnInitCb
         _OnTextChangedCb
-        (_fun _int _int -> _void)
-        (_fun _int _float -> _void)
-        (_fun _int _bool -> _void)
-        (_fun _int _pointer _int -> _void)
-        (_fun _int -> _void)
+        _OnComboChangedCb
+        _OnNumericValueChangedCb
+        _OnBooleanValueChangedCb
+        _OnMultipleNumericValuesChangedCb
+        _OnClickCb
          -> _void)))
 
 (define setElement

@@ -48,32 +48,16 @@
 (define setChildren
   (get-ffi-obj "setChildren" xframes (_fun _int _string -> _void)))
 
-; (define font-defs (file->string "./font-defs.json"))
-(define theme (file->string "./theme.json"))
-
-; export const theme2Colors = {
-;   darkestGrey: "#141f2c",
-;   darkerGrey: "#2a2e39",
-;   darkGrey: "#363b4a",
-;   lightGrey: "#5a5a5a",
-;   lighterGrey: "#7A818C",
-;   evenLighterGrey: "#8491a3",
-;   black: "#0A0B0D",
-;   green: "#75f986",
-;   red: "#ff0062",
-;   white: "#fff",
-; };
-
 (define theme-colors 
     (hasheq 
         'darkestGrey "#141f2c" 
         'darkerGrey "#2a2e39" 
         'darkGrey "#363b4a" 
         'lightGrey "#5a5a5a" 
-        'lighterGrey: "#7A818C" 
+        'lighterGrey "#7A818C" 
         'evenLighterGrey "#8491a3" 
         'black "#0A0B0D"  
-        'green: "#75f986" 
+        'green "#75f986" 
         'red "#ff0062"
         'white "#fff" 
     )
@@ -144,6 +128,58 @@
   (hasheq 'colors
     (hasheq
       (string->symbol (number->string (enum-value 'Text))) (list (hash-ref theme-colors 'white) 1)
+      (string->symbol (number->string (enum-value 'TextDisabled))) (list (hash-ref theme-colors 'lighterGrey) 1)
+      (string->symbol (number->string (enum-value 'WindowBg))) (list (hash-ref theme-colors 'black) 1)
+      (string->symbol (number->string (enum-value 'ChildBg))) (list (hash-ref theme-colors 'black) 1)
+      (string->symbol (number->string (enum-value 'PopupBg))) (list (hash-ref theme-colors 'white) 1)
+      (string->symbol (number->string (enum-value 'Border))) (list (hash-ref theme-colors 'lightGrey) 1)
+      (string->symbol (number->string (enum-value 'BorderShadow))) (list (hash-ref theme-colors 'darkestGrey) 1)
+      (string->symbol (number->string (enum-value 'FrameBg))) (list (hash-ref theme-colors 'black) 1)
+      (string->symbol (number->string (enum-value 'FrameBgHovered))) (list (hash-ref theme-colors 'darkerGrey) 1)
+      (string->symbol (number->string (enum-value 'FrameBgActive))) (list (hash-ref theme-colors 'lightGrey) 1)
+      (string->symbol (number->string (enum-value 'TitleBg))) (list (hash-ref theme-colors 'lightGrey) 1)
+      (string->symbol (number->string (enum-value 'TitleBgActive))) (list (hash-ref theme-colors 'darkerGrey) 1)
+      (string->symbol (number->string (enum-value 'TitleBgCollapsed))) (list (hash-ref theme-colors 'lightGrey) 1)
+      (string->symbol (number->string (enum-value 'MenuBarBg))) (list (hash-ref theme-colors 'lightGrey) 1)
+      (string->symbol (number->string (enum-value 'ScrollbarBg))) (list (hash-ref theme-colors 'darkerGrey) 1)
+      (string->symbol (number->string (enum-value 'ScrollbarGrab))) (list (hash-ref theme-colors 'darkerGrey) 1)
+      (string->symbol (number->string (enum-value 'ScrollbarGrabHovered))) (list (hash-ref theme-colors 'lightGrey) 1)
+      (string->symbol (number->string (enum-value 'ScrollbarGrabActive))) (list (hash-ref theme-colors 'darkestGrey) 1)
+      (string->symbol (number->string (enum-value 'CheckMark))) (list (hash-ref theme-colors 'darkestGrey) 1)
+      (string->symbol (number->string (enum-value 'SliderGrab))) (list (hash-ref theme-colors 'darkerGrey) 1)
+      (string->symbol (number->string (enum-value 'SliderGrabActive))) (list (hash-ref theme-colors 'lightGrey) 1)
+      (string->symbol (number->string (enum-value 'Button))) (list (hash-ref theme-colors 'black) 1)
+      (string->symbol (number->string (enum-value 'ButtonHovered))) (list (hash-ref theme-colors 'darkerGrey) 1)
+      (string->symbol (number->string (enum-value 'ButtonActive))) (list (hash-ref theme-colors 'black) 1)
+      (string->symbol (number->string (enum-value 'Header))) (list (hash-ref theme-colors 'black) 1)
+      (string->symbol (number->string (enum-value 'HeaderHovered))) (list (hash-ref theme-colors 'black) 1)
+      (string->symbol (number->string (enum-value 'HeaderActive))) (list (hash-ref theme-colors 'lightGrey) 1)
+      (string->symbol (number->string (enum-value 'Separator))) (list (hash-ref theme-colors 'darkestGrey) 1)
+      (string->symbol (number->string (enum-value 'SeparatorHovered))) (list (hash-ref theme-colors 'lightGrey) 1)
+      (string->symbol (number->string (enum-value 'SeparatorActive))) (list (hash-ref theme-colors 'lightGrey) 1)
+      (string->symbol (number->string (enum-value 'ResizeGrip))) (list (hash-ref theme-colors 'black) 1)
+      (string->symbol (number->string (enum-value 'ResizeGripHovered))) (list (hash-ref theme-colors 'lightGrey) 1)
+      (string->symbol (number->string (enum-value 'ResizeGripActive))) (list (hash-ref theme-colors 'darkerGrey) 1)
+      (string->symbol (number->string (enum-value 'Tab))) (list (hash-ref theme-colors 'black) 1)
+      (string->symbol (number->string (enum-value 'TabHovered))) (list (hash-ref theme-colors 'darkerGrey) 1)
+      (string->symbol (number->string (enum-value 'TabActive))) (list (hash-ref theme-colors 'lightGrey) 1)
+      (string->symbol (number->string (enum-value 'TabUnfocused))) (list (hash-ref theme-colors 'black) 1)
+      (string->symbol (number->string (enum-value 'TabUnfocusedActive))) (list (hash-ref theme-colors 'lightGrey) 1)
+      (string->symbol (number->string (enum-value 'PlotLines))) (list (hash-ref theme-colors 'darkerGrey) 1)
+      (string->symbol (number->string (enum-value 'PlotLinesHovered))) (list (hash-ref theme-colors 'lightGrey) 1)
+      (string->symbol (number->string (enum-value 'PlotHistogram))) (list (hash-ref theme-colors 'darkerGrey) 1)
+      (string->symbol (number->string (enum-value 'PlotHistogramHovered))) (list (hash-ref theme-colors 'lightGrey) 1)
+      (string->symbol (number->string (enum-value 'TableHeaderBg))) (list (hash-ref theme-colors 'black) 1)
+      (string->symbol (number->string (enum-value 'TableBorderStrong))) (list (hash-ref theme-colors 'lightGrey) 1)
+      (string->symbol (number->string (enum-value 'TableBorderLight))) (list (hash-ref theme-colors 'darkerGrey) 1)
+      (string->symbol (number->string (enum-value 'TableRowBg))) (list (hash-ref theme-colors 'darkGrey) 1)
+      (string->symbol (number->string (enum-value 'TableRowBgAlt))) (list (hash-ref theme-colors 'darkerGrey) 1)
+      (string->symbol (number->string (enum-value 'TextSelectedBg))) (list (hash-ref theme-colors 'darkerGrey) 1)
+      (string->symbol (number->string (enum-value 'DragDropTarget))) (list (hash-ref theme-colors 'darkerGrey) 1)
+      (string->symbol (number->string (enum-value 'NavHighlight))) (list (hash-ref theme-colors 'darkerGrey) 1)
+      (string->symbol (number->string (enum-value 'NavWindowingHighlight))) (list (hash-ref theme-colors 'darkerGrey) 1)
+      (string->symbol (number->string (enum-value 'NavWindowingDimBg))) (list (hash-ref theme-colors 'darkerGrey) 1)
+      (string->symbol (number->string (enum-value 'ModalWindowDimBg))) (list (hash-ref theme-colors 'darkerGrey) 1)
     )
   )
 )
@@ -153,11 +189,9 @@
     (jsexpr->string	font-defs-hash)
 )
 
-(define theme-json
+(define theme
     (jsexpr->string	theme-hash)
 )
-
-(displayln theme-json)
 
 (define (onInit)
     (thunk

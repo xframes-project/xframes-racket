@@ -4,6 +4,10 @@
 
 ### Install Racket
 
+#### Ubuntu
+
+I tried using the snap package but there was a mismatch with the libc version so I ended up building racket from scratch, which was straightforward (`./configure`, `make`, `sudo make install`)
+
 #### Windows
 
 I recommend using winget:
@@ -20,4 +24,10 @@ I recommend using winget:
 
 ## Screenshots
 
+Windows 11
+
 ![image](https://github.com/user-attachments/assets/164f1565-4f1d-4095-8c34-8caa5bc27d51)
+
+Ubuntu 24.04
+
+![Screenshot from 2025-01-14 23-41-06](https://github.com/user-attachments/assets/8ea2c431-d3d9-4855-bfd5-4a516f13ac9e)

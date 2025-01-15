@@ -6,7 +6,7 @@
 
 #### Ubuntu
 
-I tried using the snap package but there was a mismatch with the libc version so I ended up building racket from scratch, which was straightforward (`./configure`, `make`, `sudo make install`)
+I tried using the snap package but there was a mismatch with the libc version so I ended up building racket from scratch, which was straightforward (`./configure`, `make`, `sudo make install`). This applies to my Raspberry Pi 5 too.
 
 #### Windows
 
@@ -31,3 +31,7 @@ Windows 11
 Ubuntu 24.04
 
 ![Screenshot from 2025-01-14 23-41-06](https://github.com/user-attachments/assets/8ea2c431-d3d9-4855-bfd5-4a516f13ac9e)
+
+Raspberry Pi 5
+
+![image](https://github.com/user-attachments/assets/52370e42-0a3e-4385-a26a-11a9a867e031)
